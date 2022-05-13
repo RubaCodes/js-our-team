@@ -35,3 +35,18 @@ let foundingMembers = [
 
 //hook alla card dove inserire il contenuto aggiuntivo
 const teamContainer = document.querySelector('.team-container');
+
+for (let i = 0; i < foundingMembers.length; i++) {
+    teamContainer.innerHTML += `<div class="team-card">
+    <div class="card-image">
+      <img
+        src="img/${foundingMembers[i].profilePicture}"
+        alt="Wayne Barnett"
+      />
+    </div>
+    <div class="card-text">
+      <h3>${foundingMembers[i].nome}</h3>
+      <p>${foundingMembers[i].ruolo}</p>
+    </div>
+  </div>`;
+}
