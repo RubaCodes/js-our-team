@@ -1,4 +1,6 @@
-
+//hook  ai tag html necessari 
+const teamContainer = document.querySelector('.team-container');
+const addMember = document.querySelector('#addMemberButton');
 // Array di oggetti aventi le informazioni sul team originario dell'azienda
 let foundingMembers = [
     {
@@ -33,9 +35,7 @@ let foundingMembers = [
     }
 ];
 
-//hook alla card dove inserire il contenuto aggiuntivo
-const teamContainer = document.querySelector('.team-container');
-
+// ciclo per i fondatori
 for (let i = 0; i < foundingMembers.length; i++) {
     teamContainer.innerHTML += `<div class="team-card">
     <div class="card-image">
@@ -50,3 +50,9 @@ for (let i = 0; i < foundingMembers.length; i++) {
     </div>
   </div>`;
 }
+
+//zona bonus ,aggiunta membri successivi
+addMember.addEventListener('click', function () {
+
+}
+);
