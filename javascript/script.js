@@ -1,3 +1,22 @@
+// FUNCTIONS
+
+// ritorna il markup html per aggiungere un nuovo membo alla pagina
+function newMember(newMember) {
+    return `<div class="team-card">
+    <div class="card-image">
+      <img
+        src="img/${newMember.profilePicture}"
+        alt="Wayne Barnett"
+      />
+    </div>
+    <div class="card-text">
+      <h3>${newMember.nome}</h3>
+      <p>${newMember.ruolo}</p>
+    </div>
+  </div>`;
+
+}
+
 //hook  ai tag html necessari 
 const teamContainer = document.querySelector('.team-container');
 const addMember = document.querySelector('#addMemberButton');
@@ -37,22 +56,18 @@ let foundingMembers = [
 
 // ciclo per i fondatori
 for (let i = 0; i < foundingMembers.length; i++) {
-    teamContainer.innerHTML += `<div class="team-card">
-    <div class="card-image">
-      <img
-        src="img/${foundingMembers[i].profilePicture}"
-        alt="Wayne Barnett"
-      />
-    </div>
-    <div class="card-text">
-      <h3>${foundingMembers[i].nome}</h3>
-      <p>${foundingMembers[i].ruolo}</p>
-    </div>
-  </div>`;
+    teamContainer.innerHTML += newMember(foundingMembers[i])
 }
 
 //zona bonus ,aggiunta membri successivi
 addMember.addEventListener('click', function () {
-
+    const newPosition = {
+        nome: document.querySelector('#name').value,
+        ruolo: document.querySelector('#role').value,
+        profilePicture: document.querySelector('#image').value
+    }
+    foundingMembers.push(newPosition);
+    teamContainer.innerHTML += newMember(newPosition);
 }
 );
+
