@@ -20,6 +20,7 @@ function newMember(newMember) {
 //hook  ai tag html necessari 
 const teamContainer = document.querySelector('.team-container');
 const addMember = document.querySelector('#addMemberButton');
+const clear = '';
 // Array di oggetti aventi le informazioni sul team originario dell'azienda
 let foundingMembers = [
     {
@@ -68,6 +69,9 @@ addMember.addEventListener('click', function () {
     }
     foundingMembers.push(newPosition);
     teamContainer.innerHTML += newMember(newPosition);
+    document.querySelector('#name').value = clear;
+    document.querySelector('#role').value = clear;
+    document.querySelector('#image').value = clear;
 }
 );
 
