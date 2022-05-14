@@ -6,7 +6,7 @@ function newMember(newMember) {
     <div class="card-image">
       <img
         src="img/${newMember.profilePicture}"
-        alt="Wayne Barnett"
+        alt="${newMember.nome}"
       />
     </div>
     <div class="card-text">
